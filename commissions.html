@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Commissions | Chery Pinetown</title>
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/commissions.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="nav-brand">
+        <div class="brand-logo">CHERY</div>
+
+        <div class="brand-text">
+            <strong>PINETOWN</strong>
+            <span>Lead Management</span>
+        </div>
+    </div>
+
+    <div class="nav-links">
+
+        <a href="../index.html">Dashboard</a>
+
+        <a href="register.html">Register Lead</a>
+
+        <a href="dashboard.html">Leads</a>
+
+        <a href="agents.html">Sales Agents</a>
+
+        <a href="referral.html">Referrals</a>
+
+        <a href="commissions.html" class="active">Commissions</a>
+
+    </div>
+
+</nav>
+
+
+<main class="commission-container">
+
+    <!-- PAGE HEADER -->
+
+    <section class="page-header">
+
+        <div>
+            <span class="eyebrow">FINANCIAL MANAGEMENT</span>
+
+            <h1>Commission Management</h1>
+
+            <p>
+                Track sales agent commissions generated from completed vehicle sales.
+            </p>
+        </div>
+
+        <div class="header-actions">
+
+            <button
+                class="secondary-button"
+                id="settingsButton"
+                type="button">
+                ⚙ Commission Settings
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- SUMMARY -->
+
+    <section class="summary-grid">
+
+        <div class="summary-card">
+
+            <div class="summary-icon">💰</div>
+
+            <div>
+                <span>Total Commission</span>
+                <strong id="totalCommission">R0.00</strong>
+            </div>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <div class="summary-icon">⏳</div>
+
+            <div>
+                <span>Pending Payment</span>
+                <strong id="pendingCommission">R0.00</strong>
+            </div>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <div class="summary-icon">✓</div>
+
+            <div>
+                <span>Paid Commission</span>
+                <strong id="paidCommission">R0.00</strong>
+            </div>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <div class="summary-icon">🚗</div>
+
+            <div>
+                <span>Vehicles Sold</span>
+                <strong id="vehiclesSold">0</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- COMMISSION RATE -->
+
+    <section class="rate-panel">
+
+        <div class="rate-info">
+
+            <span class="section-label">CURRENT COMMISSION RATE</span>
+
+            <div class="rate-value" id="currentRate">
+                R2,000.00
+            </div>
+
+            <p>
+                Flat commission earned for each vehicle marked as sold.
+            </p>
+
+        </div>
+
+        <button
+            class="primary-button"
+            id="changeRateButton"
+            type="button">
+            Change Rate
+        </button>
+
+    </section>
+
+
+    <!-- FILTERS -->
+
+    <section class="controls-panel">
+
+        <div class="search-box">
+
+            <span>⌕</span>
+
+            <input
+                type="search"
+                id="commissionSearch"
+                placeholder="Search agent, customer, vehicle or lead ID..."
+                autocomplete="off">
+
+        </div>
+
+
+        <select id="paymentFilter">
+
+            <option value="all">All Payment Statuses</option>
+
+            <option value="pending">Pending</option>
+
+            <option value="paid">Paid</option>
+
+        </select>
+
+
+        <select id="agentFilter">
+
+            <option value="all">All Sales Agents</option>
+
+        </select>
+
+
+        <button
+            class="reset-button"
+            id="resetFilters"
+            type="button">
+            Reset
+        </button>
+
+    </section>
+
+
+    <!-- COMMISSION TABLE -->
+
+    <section class="table-panel">
+
+        <div class="table-header">
+
+            <div>
+
+                <span class="section-label">
+                    COMMISSION HISTORY
+                </span>
+
+                <h2>Vehicle Sales</h2>
+
+            </div>
+
+            <span id="commissionCount" class="record-count">
+                0 records
+            </span>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Sale</th>
+
+                        <th>Customer</th>
+
+                        <th>Vehicle</th>
+
+                        <th>Sales Agent</th>
+
+                        <th>Sold Date</th>
+
+                        <th>Commission</th>
+
+                        <th>Payment</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="commissionTableBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <div
+            class="empty-state"
+            id="emptyState"
+            hidden>
+
+            <div class="empty-icon">💼</div>
+
+            <h3>No commission records</h3>
+
+            <p>
+                Commission records will appear here when a lead is marked as SOLD.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- SETTINGS MODAL -->
+
+<div
+    class="modal-overlay"
+    id="settingsModal"
+    hidden>
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="section-label">
+                    COMMISSION SETTINGS
+                </span>
+
+                <h2>Flat Commission Rate</h2>
+
+            </div>
+
+            <button
+                class="modal-close"
+                id="closeSettings"
+                type="button">
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="commissionSettingsForm">
+
+            <div class="form-group">
+
+                <label for="commissionRate">
+                    Commission per vehicle
+                </label>
+
+                <div class="currency-input">
+
+                    <span>R</span>
+
+                    <input
+                        type="number"
+                        id="commissionRate"
+                        min="0"
+                        step="50"
+                        required>
+
+                </div>
+
+                <small>
+                    This amount will be applied to newly sold vehicles.
+                </small>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="cancelSettings">
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-button">
+                    Save Commission Rate
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- SALE DETAILS MODAL -->
+
+<div
+    class="modal-overlay"
+    id="saleModal"
+    hidden>
+
+    <div class="modal sale-modal">
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="section-label">
+                    SALE DETAILS
+                </span>
+
+                <h2 id="saleModalTitle">
+                    Commission Details
+                </h2>
+
+            </div>
+
+            <button
+                class="modal-close"
+                id="closeSale"
+                type="button">
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="sale-details">
+
+            <div class="detail-card">
+
+                <span>Lead ID</span>
+
+                <strong id="detailLeadId">—</strong>
+
+            </div>
+
+
+            <div class="detail-card">
+
+                <span>Customer</span>
+
+                <strong id="detailCustomer">—</strong>
+
+            </div>
+
+
+            <div class="detail-card">
+
+                <span>Vehicle</span>
+
+                <strong id="detailVehicle">—</strong>
+
+            </div>
+
+
+            <div class="detail-card">
+
+                <span>Sales Agent</span>
+
+                <strong id="detailAgent">—</strong>
+
+            </div>
+
+
+            <div class="detail-card">
+
+                <span>Sale Date</span>
+
+                <strong id="detailSoldDate">—</strong>
+
+            </div>
+
+
+            <div class="detail-card highlight">
+
+                <span>Commission</span>
+
+                <strong id="detailCommission">R0.00</strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="payment-section">
+
+            <span class="section-label">
+                PAYMENT STATUS
+            </span>
+
+            <select id="detailPaymentStatus">
+
+                <option value="pending">
+                    Pending
+                </option>
+
+                <option value="paid">
+                    Paid
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="modal-actions">
+
+            <button
+                class="secondary-button"
+                id="closeSaleButton"
+                type="button">
+                Close
+            </button>
+
+            <button
+                class="primary-button"
+                id="savePaymentStatus"
+                type="button">
+                Save Payment Status
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer class="footer">
+
+    <p>
+        © <span id="currentYear"></span>
+        Chery Pinetown Lead Management System
+    </p>
+
+    <span>
+        Commission Management
+    </span>
+
+</footer>
+
+
+<script src="../js/main.js"></script>
+<script src="../js/commissions.js"></script>
+
+</body>
+</html>

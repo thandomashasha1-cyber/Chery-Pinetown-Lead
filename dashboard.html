@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Manage customer leads for Chery Pinetown"
+    >
+
+    <title>
+        Leads | Chery Pinetown
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../css/main.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/leads.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         NAVIGATION
+    =================================================== -->
+
+    <header class="navbar">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                CH
+            </div>
+
+            <div class="brand-details">
+
+                <h1>
+                    Chery Pinetown
+                </h1>
+
+                <span>
+                    Lead Management
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="main-navigation">
+
+            <a href="../index.html">
+                Dashboard
+            </a>
+
+            <a href="register.html">
+                Register Lead
+            </a>
+
+            <a
+                href="dashboard.html"
+                class="active"
+            >
+                Leads
+            </a>
+
+            <a href="agents.html">
+                Sales Agents
+            </a>
+
+            <a href="referral.html">
+                Referrals
+            </a>
+
+            <a href="commissions.html">
+                Commissions
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ==================================================
+         MAIN
+    =================================================== -->
+
+    <main class="leads-page">
+
+
+        <!-- ==================================================
+             PAGE HEADER
+        =================================================== -->
+
+        <section class="leads-header">
+
+            <div>
+
+                <span class="page-label">
+                    SALES PIPELINE
+                </span>
+
+                <h2>
+                    Customer Leads
+                </h2>
+
+                <p>
+                    Manage customer enquiries, follow-ups
+                    and vehicle opportunities.
+                </p>
+
+            </div>
+
+
+            <a
+                href="register.html"
+                class="btn btn-primary"
+            >
+                + Register Lead
+            </a>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             STATISTICS
+        =================================================== -->
+
+        <section class="lead-stats">
+
+
+            <div class="lead-stat">
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="statTotal">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="lead-stat">
+
+                <span>
+                    New
+                </span>
+
+                <strong id="statNew">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="lead-stat">
+
+                <span>
+                    Contacted
+                </span>
+
+                <strong id="statContacted">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="lead-stat">
+
+                <span>
+                    Test Drives
+                </span>
+
+                <strong id="statTestDrive">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="lead-stat">
+
+                <span>
+                    Approved
+                </span>
+
+                <strong id="statApproved">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="lead-stat">
+
+                <span>
+                    Sold
+                </span>
+
+                <strong id="statSold">
+                    0
+                </strong>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==================================================
+             FILTER BAR
+        =================================================== -->
+
+        <section class="filter-card">
+
+
+            <div class="filter-group search-group">
+
+                <label for="searchLeads">
+                    Search
+                </label>
+
+                <div class="search-input">
+
+                    <span>
+                        🔎
+                    </span>
+
+                    <input
+                        type="search"
+                        id="searchLeads"
+                        placeholder="Search customer, phone, Lead ID..."
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <div class="filter-group">
+
+                <label for="statusFilter">
+                    Status
+                </label>
+
+                <select id="statusFilter">
+
+                    <option value="all">
+                        All statuses
+                    </option>
+
+                    <option value="new">
+                        New
+                    </option>
+
+                    <option value="contacted">
+                        Contacted
+                    </option>
+
+                    <option value="qualified">
+                        Qualified
+                    </option>
+
+                    <option value="test_drive">
+                        Test Drive
+                    </option>
+
+                    <option value="quoted">
+                        Quoted
+                    </option>
+
+                    <option value="finance">
+                        Finance
+                    </option>
+
+                    <option value="approved">
+                        Approved
+                    </option>
+
+                    <option value="sold">
+                        Sold
+                    </option>
+
+                    <option value="lost">
+                        Lost
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div class="filter-group">
+
+                <label for="sourceFilter">
+                    Lead Source
+                </label>
+
+                <select id="sourceFilter">
+
+                    <option value="all">
+                        All sources
+                    </option>
+
+                    <option value="Vehicle Website">
+                        Vehicle Website
+                    </option>
+
+                    <option value="WhatsApp Referral">
+                        WhatsApp Referral
+                    </option>
+
+                    <option value="Social Media">
+                        Social Media
+                    </option>
+
+                    <option value="Walk-in">
+                        Walk-in
+                    </option>
+
+                    <option value="Direct Enquiry">
+                        Direct Enquiry
+                    </option>
+
+                    <option value="Existing Customer">
+                        Existing Customer
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div class="filter-group">
+
+                <label for="sortLeads">
+                    Sort
+                </label>
+
+                <select id="sortLeads">
+
+                    <option value="newest">
+                        Newest first
+                    </option>
+
+                    <option value="oldest">
+                        Oldest first
+                    </option>
+
+                    <option value="customer">
+                        Customer name
+                    </option>
+
+                    <option value="status">
+                        Status
+                    </option>
+
+                </select>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==================================================
+             RESULTS
+        =================================================== -->
+
+        <section class="leads-table-card">
+
+
+            <div class="table-card-header">
+
+                <div>
+
+                    <span class="card-label">
+                        LEAD REGISTER
+                    </span>
+
+                    <h3>
+                        All Customer Leads
+                    </h3>
+
+                </div>
+
+
+                <span
+                    class="result-count"
+                    id="resultCount"
+                >
+                    0 leads
+                </span>
+
+            </div>
+
+
+
+            <div class="table-container">
+
+
+                <table class="leads-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Lead
+                            </th>
+
+                            <th>
+                                Customer
+                            </th>
+
+                            <th>
+                                Vehicle
+                            </th>
+
+                            <th>
+                                Source
+                            </th>
+
+                            <th>
+                                Agent
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Registered
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="leadsTableBody">
+
+                        <tr>
+
+                            <td
+                                colspan="8"
+                                class="table-empty"
+                            >
+
+                                No leads registered yet.
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==================================================
+         LEAD DETAILS MODAL
+    =================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="leadModal"
+        hidden
+    >
+
+        <div class="lead-modal">
+
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span class="card-label">
+                        LEAD DETAILS
+                    </span>
+
+                    <h3 id="modalCustomerName">
+                        Customer
+                    </h3>
+
+                    <span
+                        class="modal-lead-id"
+                        id="modalLeadId"
+                    >
+                        CH-PTN-00000000-XXXX
+                    </span>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="closeModal"
+                    aria-label="Close"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+
+            <!-- STATUS -->
+
+            <div class="modal-status-section">
+
+                <label for="modalStatus">
+                    Lead Status
+                </label>
+
+                <div class="status-update">
+
+                    <select id="modalStatus">
+
+                        <option value="new">
+                            New
+                        </option>
+
+                        <option value="contacted">
+                            Contacted
+                        </option>
+
+                        <option value="qualified">
+                            Qualified
+                        </option>
+
+                        <option value="test_drive">
+                            Test Drive
+                        </option>
+
+                        <option value="quoted">
+                            Quoted
+                        </option>
+
+                        <option value="finance">
+                            Finance
+                        </option>
+
+                        <option value="approved">
+                            Approved
+                        </option>
+
+                        <option value="sold">
+                            Sold
+                        </option>
+
+                        <option value="lost">
+                            Lost
+                        </option>
+
+                    </select>
+
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        id="updateStatus"
+                    >
+                        Update Status
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CUSTOMER -->
+
+            <div class="details-section">
+
+                <h4>
+                    Customer Information
+                </h4>
+
+
+                <div class="details-grid">
+
+                    <div>
+                        <span>
+                            Full Name
+                        </span>
+
+                        <strong id="detailName">
+                            —
+                        </strong>
+                    </div>
+
+
+                    <div>
+                        <span>
+                            Mobile
+                        </span>
+
+                        <strong id="detailPhone">
+                            —
+                        </strong>
+                    </div>
+
+
+                    <div>
+                        <span>
+                            WhatsApp
+                        </span>
+
+                        <strong id="detailWhatsapp">
+                            —
+                        </strong>
+                    </div>
+
+
+                    <div>
+                        <span>
+                            Email
+                        </span>
+
+                        <strong id="detailEmail">
+                            —
+                        </strong>
+                    </div>
+
+
+                    <div>
+                        <span>
+                            Province
+                        </span>
+
+                        <strong id="detailProvince">
+                            —
+                        </strong>
+                    </div>
+
+
+                    <div>
+                        <span>
+                            City
+                        </span>
+
+                        <strong id="detailCity">
+                            —
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- VEHICLE -->
+
+            <div class="details-section">
+
+                <h4>
+                    Vehicle Interest
+                </h4>
+
+
+                <div class="details-grid">
+
+                    <div>
+                        <span>
+                            Vehicle
+                        </span>
+
+                        <strong id="detailVehicle">
+                            —
+                        </strong>
+                    </div>
+
+
+                    <div>
+                        <span>
+                            Condition
+                        </span>
+
+                        <strong id="detailCondition">
+                            —
+                        </strong>
+                    </div>
+
+
+                    <div>
+                        <span>
+                            Stock Number
+                        </span>
+
+                        <strong id="detailStock">
+                            —
+                        </strong>
+                    </div>
+
+
+                    <div>
+                        <span>
+                            Purchase Timeframe
+                        </span>
+
+                        <strong id="detailTimeframe">
+                            —
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SALES -->
+
+            <div class="details-section">
+
+                <h4>
+                    Sales & Referral
+                </h4>
+
+
+                <div class="details-grid">
+
+                    <div>
+                        <span>
+                            Lead Source
+                        </span>
+
+                        <strong id="detailSource">
+                            —
+                        </strong>
+                    </div>
+
+
+                    <div>
+                        <span>
+                            Sales Agent
+                        </span>
+
+                        <strong id="detailAgent">
+                            —
+                        </strong>
+                    </div>
+
+
+                    <div>
+                        <span>
+                            Agent Number
+                        </span>
+
+                        <strong id="detailAgentNumber">
+                            —
+                        </strong>
+                    </div>
+
+
+                    <div>
+                        <span>
+                            Referral Code
+                        </span>
+
+                        <strong id="detailReferral">
+                            —
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NOTES -->
+
+            <div class="details-section">
+
+                <h4>
+                    Notes
+                </h4>
+
+                <div
+                    class="lead-notes"
+                    id="detailNotes"
+                >
+                    No notes recorded.
+                </div>
+
+            </div>
+
+
+
+            <!-- MODAL ACTIONS -->
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="deleteLead"
+                >
+                    Delete Lead
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="closeModalBottom"
+                >
+                    Close
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         FOOTER
+    =================================================== -->
+
+    <footer class="footer">
+
+        <p>
+
+            ©
+            <span id="currentYear">
+                2026
+            </span>
+
+            <strong>
+                Chery Pinetown Leads
+            </strong>
+
+        </p>
+
+        <span>
+            Dealership Lead Management System
+        </span>
+
+    </footer>
+
+
+
+    <script src="../js/main.js"></script>
+
+    <script
+    type="module"
+    src="../js/leads.js"
+></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Register a new customer lead for Chery Pinetown"
+    >
+
+    <title>
+        Register Lead | Chery Pinetown
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../css/main.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/register.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         NAVIGATION
+    =================================================== -->
+
+    <header class="navbar">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                CH
+            </div>
+
+            <div class="brand-details">
+
+                <h1>
+                    Chery Pinetown
+                </h1>
+
+                <span>
+                    Lead Management
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="main-navigation">
+
+            <a href="../index.html">
+                Dashboard
+            </a>
+
+            <a
+                href="register.html"
+                class="active"
+            >
+                Register Lead
+            </a>
+
+            <a href="dashboard.html">
+                Leads
+            </a>
+
+            <a href="agents.html">
+                Sales Agents
+            </a>
+
+            <a href="referral.html">
+                Referrals
+            </a>
+
+            <a href="commissions.html">
+                Commissions
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ==================================================
+         PAGE
+    =================================================== -->
+
+    <main class="register-page">
+
+
+        <!-- PAGE HEADER -->
+
+        <section class="register-header">
+
+            <div>
+
+                <span class="page-label">
+                    LEAD MANAGEMENT
+                </span>
+
+                <h2>
+                    Register New Lead
+                </h2>
+
+                <p>
+                    Capture a customer enquiry and vehicle
+                    opportunity in the dealership system.
+                </p>
+
+            </div>
+
+
+            <div class="lead-reference">
+
+                <span>
+                    LEAD REFERENCE
+                </span>
+
+                <strong id="leadReference">
+                    Generating...
+                </strong>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             FORM
+        =================================================== -->
+
+        <form
+            id="leadForm"
+            class="lead-form"
+            novalidate
+        >
+
+
+            <!-- ==================================================
+                 CUSTOMER INFORMATION
+            =================================================== -->
+
+            <section class="form-card">
+
+                <div class="form-card-header">
+
+                    <div>
+
+                        <span class="card-label">
+                            SECTION 01
+                        </span>
+
+                        <h3>
+                            Customer Information
+                        </h3>
+
+                        <p>
+                            Enter the customer's contact details.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+
+                    <!-- FULL NAME -->
+
+                    <div class="form-group form-full">
+
+                        <label for="customerName">
+                            Full Name
+                            <span>*</span>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="customerName"
+                            name="customerName"
+                            placeholder="e.g. Luthando Hlengwa"
+                            autocomplete="name"
+                            required
+                        >
+
+                        <small class="field-error"></small>
+
+                    </div>
+
+
+
+                    <!-- PHONE -->
+
+                    <div class="form-group">
+
+                        <label for="customerPhone">
+                            Mobile Number
+                            <span>*</span>
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="customerPhone"
+                            name="customerPhone"
+                            placeholder="e.g. 082 123 4567"
+                            autocomplete="tel"
+                            required
+                        >
+
+                        <small class="field-error"></small>
+
+                    </div>
+
+
+
+                    <!-- WHATSAPP -->
+
+                    <div class="form-group">
+
+                        <label for="customerWhatsapp">
+                            WhatsApp Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="customerWhatsapp"
+                            name="customerWhatsapp"
+                            placeholder="e.g. 082 123 4567"
+                        >
+
+                        <small class="field-help">
+                            Leave blank if the same as mobile number.
+                        </small>
+
+                        <small class="field-error"></small>
+
+                    </div>
+
+
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group">
+
+                        <label for="customerEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="customerEmail"
+                            name="customerEmail"
+                            placeholder="customer@email.com"
+                            autocomplete="email"
+                        >
+
+                        <small class="field-error"></small>
+
+                    </div>
+
+
+
+                    <!-- PROVINCE -->
+
+                    <div class="form-group">
+
+                        <label for="province">
+                            Province
+                        </label>
+
+                        <select
+                            id="province"
+                            name="province"
+                        >
+
+                            <option value="">
+                                Select province
+                            </option>
+
+                            <option value="Eastern Cape">
+                                Eastern Cape
+                            </option>
+
+                            <option value="Free State">
+                                Free State
+                            </option>
+
+                            <option value="Gauteng">
+                                Gauteng
+                            </option>
+
+                            <option value="KwaZulu-Natal">
+                                KwaZulu-Natal
+                            </option>
+
+                            <option value="Limpopo">
+                                Limpopo
+                            </option>
+
+                            <option value="Mpumalanga">
+                                Mpumalanga
+                            </option>
+
+                            <option value="Northern Cape">
+                                Northern Cape
+                            </option>
+
+                            <option value="North West">
+                                North West
+                            </option>
+
+                            <option value="Western Cape">
+                                Western Cape
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- CITY -->
+
+                    <div class="form-group">
+
+                        <label for="city">
+                            City / Town
+                        </label>
+
+                        <input
+                            type="text"
+                            id="city"
+                            name="city"
+                            placeholder="e.g. Pinetown"
+                        >
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==================================================
+                 VEHICLE INFORMATION
+            =================================================== -->
+
+            <section class="form-card">
+
+                <div class="form-card-header">
+
+                    <div>
+
+                        <span class="card-label">
+                            SECTION 02
+                        </span>
+
+                        <h3>
+                            Vehicle Interest
+                        </h3>
+
+                        <p>
+                            Record the vehicle the customer is interested in.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+
+                    <!-- MODEL -->
+
+                    <div class="form-group">
+
+                        <label for="vehicleModel">
+                            Vehicle Model
+                            <span>*</span>
+                        </label>
+
+                        <select
+                            id="vehicleModel"
+                            name="vehicleModel"
+                            required
+                        >
+
+                            <option value="">
+                                Select vehicle
+                            </option>
+
+                            <option value="Tiggo 4">
+                                Chery Tiggo 4
+                            </option>
+
+                            <option value="Tiggo 7">
+                                Chery Tiggo 7
+                            </option>
+
+                            <option value="Tiggo 8">
+                                Chery Tiggo 8
+                            </option>
+
+                            <option value="Tiggo 8 Pro">
+                                Chery Tiggo 8 Pro
+                            </option>
+
+                            <option value="Tiggo 8 Pro Max">
+                                Chery Tiggo 8 Pro Max
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                        <small class="field-error"></small>
+
+                    </div>
+
+
+
+                    <!-- CONDITION -->
+
+                    <div class="form-group">
+
+                        <label for="vehicleCondition">
+                            Vehicle Condition
+                            <span>*</span>
+                        </label>
+
+                        <select
+                            id="vehicleCondition"
+                            name="vehicleCondition"
+                            required
+                        >
+
+                            <option value="">
+                                Select condition
+                            </option>
+
+                            <option value="New">
+                                New
+                            </option>
+
+                            <option value="Used">
+                                Used
+                            </option>
+
+                        </select>
+
+                        <small class="field-error"></small>
+
+                    </div>
+
+
+
+                    <!-- STOCK -->
+
+                    <div class="form-group">
+
+                        <label for="stockNumber">
+                            Stock Number
+                        </label>
+
+                        <input
+                            type="text"
+                            id="stockNumber"
+                            name="stockNumber"
+                            placeholder="e.g. CHR-PTN-1042"
+                        >
+
+                        <small class="field-help">
+                            Optional if the customer has selected a specific vehicle.
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- PURCHASE TIMEFRAME -->
+
+                    <div class="form-group">
+
+                        <label for="purchaseTimeframe">
+                            Purchase Timeframe
+                        </label>
+
+                        <select
+                            id="purchaseTimeframe"
+                            name="purchaseTimeframe"
+                        >
+
+                            <option value="">
+                                Select timeframe
+                            </option>
+
+                            <option value="Immediately">
+                                Immediately
+                            </option>
+
+                            <option value="Within 1 month">
+                                Within 1 month
+                            </option>
+
+                            <option value="1 - 3 months">
+                                1 - 3 months
+                            </option>
+
+                            <option value="3 - 6 months">
+                                3 - 6 months
+                            </option>
+
+                            <option value="Just browsing">
+                                Just browsing
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==================================================
+                 SALES / REFERRAL
+            =================================================== -->
+
+            <section class="form-card">
+
+                <div class="form-card-header">
+
+                    <div>
+
+                        <span class="card-label">
+                            SECTION 03
+                        </span>
+
+                        <h3>
+                            Sales & Referral Information
+                        </h3>
+
+                        <p>
+                            Record how the lead reached the dealership
+                            and who is handling the opportunity.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+
+                    <!-- LEAD SOURCE -->
+
+                    <div class="form-group">
+
+                        <label for="leadSource">
+                            Lead Source
+                            <span>*</span>
+                        </label>
+
+                        <select
+                            id="leadSource"
+                            name="leadSource"
+                            required
+                        >
+
+                            <option value="">
+                                Select lead source
+                            </option>
+
+                            <option value="Vehicle Website">
+                                Vehicle Website
+                            </option>
+
+                            <option value="WhatsApp Referral">
+                                WhatsApp Referral
+                            </option>
+
+                            <option value="Social Media">
+                                Social Media
+                            </option>
+
+                            <option value="Walk-in">
+                                Walk-in
+                            </option>
+
+                            <option value="Direct Enquiry">
+                                Direct Enquiry
+                            </option>
+
+                            <option value="Existing Customer">
+                                Existing Customer
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                        <small class="field-error"></small>
+
+                    </div>
+
+
+
+                    <!-- AGENT -->
+
+                    <div class="form-group">
+
+                        <label for="agentName">
+                            Sales Agent
+                        </label>
+
+                        <input
+                            type="text"
+                            id="agentName"
+                            name="agentName"
+                            placeholder="e.g. Sales Agent Name"
+                        >
+
+                    </div>
+
+
+
+                    <!-- AGENT NUMBER -->
+
+                    <div class="form-group">
+
+                        <label for="agentNumber">
+                            Agent WhatsApp / Mobile
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="agentNumber"
+                            name="agentNumber"
+                            placeholder="e.g. 083 123 4567"
+                        >
+
+                    </div>
+
+
+
+                    <!-- REFERRAL CODE -->
+
+                    <div class="form-group">
+
+                        <label for="referralCode">
+                            Referral Code
+                        </label>
+
+                        <input
+                            type="text"
+                            id="referralCode"
+                            name="referralCode"
+                            placeholder="Optional referral code"
+                        >
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==================================================
+                 NOTES
+            =================================================== -->
+
+            <section class="form-card">
+
+                <div class="form-card-header">
+
+                    <div>
+
+                        <span class="card-label">
+                            SECTION 04
+                        </span>
+
+                        <h3>
+                            Lead Notes
+                        </h3>
+
+                        <p>
+                            Add important information about the customer.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="leadNotes">
+                        Notes
+                    </label>
+
+                    <textarea
+                        id="leadNotes"
+                        name="leadNotes"
+                        rows="6"
+                        maxlength="1000"
+                        placeholder="Example: Customer interested in Tiggo 7. Wants finance options and a test drive this weekend."
+                    ></textarea>
+
+                    <div class="textarea-footer">
+
+                        <small>
+                            Additional information for the sales team.
+                        </small>
+
+                        <span id="characterCount">
+                            0 / 1000
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==================================================
+                 FORM ACTIONS
+            =================================================== -->
+
+            <section class="form-actions">
+
+                <a
+                    href="../index.html"
+                    class="btn btn-secondary"
+                >
+                    Cancel
+                </a>
+
+
+                <button
+                    type="reset"
+                    class="btn btn-outline"
+                    id="clearForm"
+                >
+                    Clear Form
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                    id="submitLead"
+                >
+                    Register Lead
+                </button>
+
+            </section>
+
+
+        </form>
+
+
+
+        <!-- ==================================================
+             SUCCESS MODAL
+        =================================================== -->
+
+        <div
+            class="modal-overlay"
+            id="successModal"
+            hidden
+        >
+
+            <div class="success-modal">
+
+                <div class="success-icon">
+                    ✓
+                </div>
+
+                <span class="page-label">
+                    LEAD REGISTERED
+                </span>
+
+                <h3>
+                    Lead Successfully Created
+                </h3>
+
+                <p>
+                    The customer lead has been captured
+                    successfully.
+                </p>
+
+
+                <div class="generated-lead">
+
+                    <span>
+                        LEAD ID
+                    </span>
+
+                    <strong id="generatedLeadId">
+                        CH-PTN-00000000-XXXX
+                    </strong>
+
+                </div>
+
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="btn btn-outline"
+                        id="copyLeadId"
+                    >
+                        Copy Lead ID
+                    </button>
+
+                    <a
+                        href="dashboard.html"
+                        class="btn btn-primary"
+                    >
+                        View Leads
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- ==================================================
+         FOOTER
+    =================================================== -->
+
+    <footer class="footer">
+
+        <p>
+
+            ©
+            <span id="currentYear">
+                2026
+            </span>
+
+            <strong>
+                Chery Pinetown Leads
+            </strong>
+
+        </p>
+
+        <span>
+            Dealership Lead Management System
+        </span>
+
+    </footer>
+
+
+
+    <script src="../js/main.js"></script>
+
+    <script src="../js/register.js"></script>
+
+
+</body>
+
+</html>

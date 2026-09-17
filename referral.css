@@ -1,0 +1,753 @@
+/* =========================================
+   REFERRAL PAGE
+========================================= */
+
+.referral-page {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 30px 60px;
+}
+
+
+/* =========================================
+   SUMMARY
+========================================= */
+
+.referral-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.summary-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 22px;
+
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+.summary-icon {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f3f4f6;
+    border-radius: 9px;
+
+    font-size: 20px;
+}
+
+.summary-card span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 12px;
+    color: #777f88;
+
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.summary-card strong {
+    font-size: 24px;
+    color: #20242a;
+}
+
+
+/* =========================================
+   REFERRAL BUILDER
+========================================= */
+
+.referral-builder {
+    margin-bottom: 35px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+
+    overflow: hidden;
+}
+
+.builder-header {
+    padding: 25px 28px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.builder-header h3 {
+    margin: 6px 0;
+
+    font-size: 21px;
+}
+
+.builder-header p {
+    margin: 0;
+
+    color: #727982;
+    font-size: 14px;
+}
+
+.builder-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+
+    padding: 28px;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.builder-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #30353b;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+
+    padding: 12px 13px;
+
+    border: 1px solid #d9dde2;
+    border-radius: 7px;
+
+    background: #fff;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: border-color 0.2s,
+                box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #e51b23;
+
+    box-shadow:
+        0 0 0 3px rgba(229, 27, 35, 0.08);
+}
+
+
+/* =========================================
+   AGENT PREVIEW
+========================================= */
+
+.agent-preview {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    padding: 15px;
+
+    background: #f7f8fa;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 8px;
+}
+
+.agent-avatar {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #20242a;
+    color: #fff;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.agent-preview strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #24282d;
+}
+
+.agent-preview span {
+    color: #777e87;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.primary-button,
+.secondary-button,
+.whatsapp-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 43px;
+
+    padding: 11px 18px;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.primary-button {
+    border: none;
+
+    background: #e51b23;
+    color: #ffffff;
+}
+
+.primary-button:hover {
+    background: #c9141b;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 7px 15px rgba(229, 27, 35, 0.2);
+}
+
+.secondary-button {
+    border: 1px solid #d8dce1;
+
+    background: #ffffff;
+    color: #30353a;
+}
+
+.secondary-button:hover {
+    background: #f5f6f7;
+}
+
+.whatsapp-button {
+    border: none;
+
+    background: #1f9d55;
+    color: #ffffff;
+}
+
+.whatsapp-button:hover {
+    background: #198447;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   MESSAGE PANEL
+========================================= */
+
+.message-panel {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 420px;
+
+    border: 1px solid #e3e6ea;
+
+    border-radius: 10px;
+
+    background: #f8f9fa;
+
+    overflow: hidden;
+}
+
+.message-panel-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 17px 20px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e3e6ea;
+}
+
+.message-panel-header span {
+    display: block;
+
+    margin-bottom: 3px;
+
+    font-size: 10px;
+
+    color: #8a9198;
+
+    letter-spacing: 0.08em;
+}
+
+.message-panel-header strong {
+    font-size: 14px;
+}
+
+.whatsapp-status {
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    background: #e9f8ef;
+
+    color: #25864d;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+#referralMessage {
+    flex: 1;
+
+    width: 100%;
+
+    min-height: 280px;
+
+    padding: 20px;
+
+    resize: none;
+
+    border: none;
+
+    outline: none;
+
+    background: #f8f9fa;
+
+    color: #333;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+.message-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    padding: 15px 18px;
+
+    background: #ffffff;
+
+    border-top: 1px solid #e3e6ea;
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.referral-table-section {
+    margin-bottom: 35px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+.table-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 25px 28px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.table-header h3 {
+    margin: 6px 0 0;
+
+    font-size: 20px;
+}
+
+.table-search input {
+    width: 260px;
+
+    padding: 11px 13px;
+
+    border: 1px solid #d9dde2;
+
+    border-radius: 7px;
+
+    outline: none;
+}
+
+.table-search input:focus {
+    border-color: #e51b23;
+}
+
+.table-container {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 850px;
+}
+
+th {
+    padding: 14px 20px;
+
+    background: #f7f8fa;
+
+    color: #717982;
+
+    text-align: left;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.05em;
+}
+
+td {
+    padding: 16px 20px;
+
+    border-top: 1px solid #edf0f2;
+
+    font-size: 13px;
+
+    color: #3c4248;
+}
+
+tbody tr {
+    transition: background 0.2s ease;
+}
+
+tbody tr:hover {
+    background: #fafbfc;
+}
+
+
+/* =========================================
+   TABLE AGENT
+========================================= */
+
+.agent-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.table-avatar {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #20242a;
+
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.agent-cell strong {
+    display: block;
+}
+
+.agent-cell span {
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: 11px;
+
+    color: #8a9198;
+}
+
+
+/* =========================================
+   REFERRAL CODE
+========================================= */
+
+.referral-code {
+    display: inline-block;
+
+    padding: 6px 9px;
+
+    background: #f0f2f4;
+
+    border-radius: 5px;
+
+    color: #252a2f;
+
+    font-family: monospace;
+
+    font-weight: 700;
+
+    letter-spacing: 0.05em;
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status {
+    display: inline-block;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+.status.active {
+    background: #e9f8ef;
+    color: #23854b;
+}
+
+.status.inactive {
+    background: #f1f2f3;
+    color: #747a80;
+}
+
+
+/* =========================================
+   ACTION
+========================================= */
+
+.table-action {
+    padding: 7px 11px;
+
+    border: 1px solid #d9dde2;
+
+    border-radius: 6px;
+
+    background: #ffffff;
+
+    color: #30353a;
+
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+.table-action:hover {
+    background: #f3f4f5;
+}
+
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.empty-state {
+    padding: 45px !important;
+
+    text-align: center;
+
+    color: #8a9198;
+}
+
+
+/* =========================================
+   HOW IT WORKS
+========================================= */
+
+.how-it-works {
+    padding: 30px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+}
+
+.how-header {
+    margin-bottom: 25px;
+}
+
+.how-header h3 {
+    margin-top: 6px;
+}
+
+.workflow-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.workflow-step {
+    padding: 20px;
+
+    border: 1px solid #e7e9ec;
+
+    border-radius: 9px;
+
+    background: #fafbfc;
+}
+
+.step-number {
+    margin-bottom: 15px;
+
+    color: #e51b23;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+}
+
+.workflow-step h4 {
+    margin-bottom: 8px;
+
+    font-size: 15px;
+}
+
+.workflow-step p {
+    margin: 0;
+
+    color: #737a82;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .referral-summary {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .workflow-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .referral-page {
+        padding: 25px 18px 45px;
+    }
+
+    .builder-content {
+        grid-template-columns: 1fr;
+    }
+
+    .table-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .table-search,
+    .table-search input {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .referral-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .workflow-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .message-actions {
+        flex-direction: column;
+    }
+
+    .message-actions button {
+        width: 100%;
+    }
+
+}

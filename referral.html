@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Referrals | Chery Pinetown</title>
+
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/referral.css">
+</head>
+
+<body>
+
+<header class="top-navbar">
+
+    <div class="brand">
+
+        <div class="brand-logo">
+            C
+        </div>
+
+        <div>
+            <h1>CHERY PINETOWN</h1>
+            <span>Lead Management System</span>
+        </div>
+
+    </div>
+
+
+    <nav class="main-nav">
+
+        <a href="../index.html">
+            Dashboard
+        </a>
+
+        <a href="register.html">
+            Register Lead
+        </a>
+
+        <a href="dashboard.html">
+            Leads
+        </a>
+
+        <a href="agents.html">
+            Sales Agents
+        </a>
+
+        <a href="referral.html" class="active">
+            Referrals
+        </a>
+
+        <a href="commissions.html">
+            Commissions
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main class="referral-page">
+
+    <!-- PAGE HEADER -->
+
+    <section class="page-header">
+
+        <div>
+
+            <span class="page-label">
+                REFERRAL MANAGEMENT
+            </span>
+
+            <h2>
+                Agent Referral Centre
+            </h2>
+
+            <p>
+                Manage sales agent referral codes and share
+                dealership enquiries directly with customers.
+            </p>
+
+        </div>
+
+
+        <a
+            href="agents.html"
+            class="secondary-button"
+        >
+            Manage Agents
+        </a>
+
+    </section>
+
+
+    <!-- SUMMARY -->
+
+    <section class="referral-summary">
+
+        <div class="summary-card">
+
+            <div class="summary-icon">
+                👥
+            </div>
+
+            <div>
+
+                <span>
+                    Active Agents
+                </span>
+
+                <strong id="activeAgents">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <div class="summary-icon">
+                🔗
+            </div>
+
+            <div>
+
+                <span>
+                    Referral Codes
+                </span>
+
+                <strong id="referralCodes">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <div class="summary-icon">
+                📱
+            </div>
+
+            <div>
+
+                <span>
+                    WhatsApp Referrals
+                </span>
+
+                <strong id="whatsappReferrals">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <div class="summary-icon">
+                🎯
+            </div>
+
+            <div>
+
+                <span>
+                    Referred Leads
+                </span>
+
+                <strong id="referredLeads">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- REFERRAL TOOL -->
+
+    <section class="referral-builder">
+
+        <div class="builder-header">
+
+            <div>
+
+                <span class="page-label">
+                    REFERRAL TOOL
+                </span>
+
+                <h3>
+                    Create Referral Message
+                </h3>
+
+                <p>
+                    Select an agent and create a ready-to-send
+                    WhatsApp referral message.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="builder-content">
+
+            <!-- LEFT -->
+
+            <div class="builder-form">
+
+                <div class="form-group">
+
+                    <label for="agentSelect">
+                        Sales Agent
+                    </label>
+
+                    <select id="agentSelect">
+
+                        <option value="">
+                            Select sales agent
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="agent-preview" id="agentPreview">
+
+                    <div class="agent-avatar">
+                        —
+                    </div>
+
+                    <div>
+
+                        <strong id="previewName">
+                            No agent selected
+                        </strong>
+
+                        <span id="previewCode">
+                            Referral code will appear here
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="customerName">
+                        Customer Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customerName"
+                        placeholder="e.g. Thabo"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="customerPhone">
+                        Customer WhatsApp Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="customerPhone"
+                        placeholder="e.g. 082 123 4567"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="vehicleInterest">
+                        Vehicle Interest
+                    </label>
+
+                    <select id="vehicleInterest">
+
+                        <option value="">
+                            General enquiry
+                        </option>
+
+                        <option value="Tiggo 4">
+                            Tiggo 4
+                        </option>
+
+                        <option value="Tiggo 7">
+                            Tiggo 7
+                        </option>
+
+                        <option value="Tiggo 8">
+                            Tiggo 8
+                        </option>
+
+                        <option value="Tiggo 8 Pro">
+                            Tiggo 8 Pro
+                        </option>
+
+                        <option value="Tiggo 8 Pro Max">
+                            Tiggo 8 Pro Max
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="generateMessage"
+                    class="primary-button"
+                >
+                    Generate Referral Message
+                </button>
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div class="message-panel">
+
+                <div class="message-panel-header">
+
+                    <div>
+
+                        <span>
+                            WHATSAPP MESSAGE
+                        </span>
+
+                        <strong>
+                            Customer Referral
+                        </strong>
+
+                    </div>
+
+                    <div class="whatsapp-status">
+                        Ready
+                    </div>
+
+                </div>
+
+
+                <textarea
+                    id="referralMessage"
+                    readonly
+                    placeholder="Your referral message will appear here..."
+                ></textarea>
+
+
+                <div class="message-actions">
+
+                    <button
+                        type="button"
+                        id="copyMessage"
+                        class="secondary-button"
+                    >
+                        Copy Message
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="sendWhatsApp"
+                        class="whatsapp-button"
+                    >
+                        Send via WhatsApp
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- AGENT REFERRAL TABLE -->
+
+    <section class="referral-table-section">
+
+        <div class="table-header">
+
+            <div>
+
+                <span class="page-label">
+                    REFERRAL DIRECTORY
+                </span>
+
+                <h3>
+                    Sales Agent Referral Codes
+                </h3>
+
+            </div>
+
+
+            <div class="table-search">
+
+                <input
+                    type="search"
+                    id="searchAgent"
+                    placeholder="Search agent or code..."
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Sales Agent
+                        </th>
+
+                        <th>
+                            Referral Code
+                        </th>
+
+                        <th>
+                            WhatsApp
+                        </th>
+
+                        <th>
+                            Leads
+                        </th>
+
+                        <th>
+                            Sold
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="referralTableBody">
+
+                    <tr>
+
+                        <td
+                            colspan="7"
+                            class="empty-state"
+                        >
+                            Loading referral directory...
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+
+    <section class="how-it-works">
+
+        <div class="how-header">
+
+            <span class="page-label">
+                WORKFLOW
+            </span>
+
+            <h3>
+                How Agent Referrals Work
+            </h3>
+
+        </div>
+
+
+        <div class="workflow-grid">
+
+            <div class="workflow-step">
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <h4>
+                    Agent Gets Code
+                </h4>
+
+                <p>
+                    Each sales agent receives a unique referral
+                    code when they are added to the system.
+                </p>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+                <div class="step-number">
+                    02
+                </div>
+
+                <h4>
+                    Share Referral
+                </h4>
+
+                <p>
+                    The agent can share their dealership referral
+                    message directly through WhatsApp.
+                </p>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+                <div class="step-number">
+                    03
+                </div>
+
+                <h4>
+                    Customer Enquires
+                </h4>
+
+                <p>
+                    The customer contacts Chery Pinetown and
+                    provides the referral information.
+                </p>
+
+            </div>
+
+
+            <div class="workflow-step">
+
+                <div class="step-number">
+                    04
+                </div>
+
+                <h4>
+                    Lead Is Tracked
+                </h4>
+
+                <p>
+                    The referral code links the customer lead
+                    back to the correct sales agent.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <p>
+        © <span id="currentYear"></span>
+        Chery Pinetown Lead Management System
+    </p>
+
+</footer>
+
+
+<script src="../js/main.js"></script>
+<script src="../js/referral.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1252 @@
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f5f6f8;
+
+    color: #111827;
+
+    line-height: 1.5;
+}
+
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar {
+    width: 100%;
+
+    min-height: 72px;
+
+    background: #111111;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        0 6%;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.08);
+}
+
+
+.brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.brand-mark {
+    font-size: 17px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    border:
+        2px solid
+        white;
+
+    padding:
+        5px 8px;
+}
+
+
+.brand-text {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.brand-text strong {
+    font-size: 14px;
+
+    letter-spacing: 0.8px;
+}
+
+
+.brand-text span {
+    font-size: 10px;
+
+    color: #aeb4bf;
+}
+
+
+.header-actions {
+    display: flex;
+
+    gap: 10px;
+
+    align-items: center;
+}
+
+
+.browse-button,
+.header-whatsapp {
+    padding:
+        10px 16px;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.browse-button {
+    background: white;
+
+    color: #111111;
+}
+
+
+.browse-button:hover {
+    transform: translateY(-1px);
+
+    background: #eeeeee;
+}
+
+
+.header-whatsapp {
+    background: #25D366;
+
+    color: white;
+}
+
+
+.header-whatsapp:hover {
+    background: #1ebe5d;
+
+    transform: translateY(-1px);
+}
+
+
+
+/* =========================
+   PAGE INTRO
+========================= */
+
+.page-intro {
+    background: white;
+
+    border-bottom:
+        1px solid #e5e7eb;
+
+    padding:
+        55px 6% 45px;
+}
+
+
+.eyebrow,
+.section-label {
+    display: inline-block;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    color: #6b7280;
+
+    margin-bottom: 8px;
+}
+
+
+.page-intro h1 {
+    font-size:
+        clamp(30px, 5vw, 48px);
+
+    line-height: 1.05;
+
+    margin-bottom: 12px;
+
+    letter-spacing: -1px;
+}
+
+
+.page-intro p {
+    max-width: 650px;
+
+    color: #6b7280;
+
+    font-size: 15px;
+}
+
+
+
+/* =========================
+   VEHICLES
+========================= */
+
+.vehicle-section {
+    padding:
+        55px 6%;
+}
+
+
+.section-heading {
+    display: flex;
+
+    align-items: end;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 28px;
+}
+
+
+.section-heading h2 {
+    font-size: 27px;
+
+    letter-spacing: -0.5px;
+}
+
+
+.filter-container {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.filter-container label {
+    font-size: 11px;
+
+    font-weight: 800;
+
+    color: #6b7280;
+}
+
+
+.filter-container select {
+    border:
+        1px solid #d1d5db;
+
+    background: white;
+
+    border-radius: 6px;
+
+    padding:
+        9px 12px;
+
+    outline: none;
+
+    font-size: 12px;
+}
+
+
+
+/* =========================
+   VEHICLE GRID
+========================= */
+
+.vehicle-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+.vehicle-card {
+    background: white;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+    animation:
+        cardAppear 0.5s ease both;
+}
+
+
+.vehicle-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(0,0,0,0.08);
+}
+
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+
+/* =========================
+   VEHICLE IMAGE
+========================= */
+
+.vehicle-image {
+    height: 210px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #20242a,
+            #0e1013
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.vehicle-image-placeholder {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: white;
+
+    opacity: 0.85;
+}
+
+
+.vehicle-image-placeholder span {
+    font-size: 42px;
+
+    font-weight: 900;
+
+    letter-spacing: -2px;
+}
+
+
+.vehicle-image-placeholder small {
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    color: #9ca3af;
+
+    margin-top: 4px;
+}
+
+
+
+/* =========================
+   VEHICLE CONTENT
+========================= */
+
+.vehicle-content {
+    padding: 20px;
+}
+
+
+.vehicle-category {
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    color: #777;
+}
+
+
+.vehicle-content h3 {
+    font-size: 21px;
+
+    margin-top: 4px;
+
+    margin-bottom: 3px;
+}
+
+
+.vehicle-content > p {
+    color: #6b7280;
+
+    font-size: 12px;
+
+    margin-bottom: 18px;
+}
+
+
+
+/* =========================
+   CARD ACTIONS
+========================= */
+
+.card-actions {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 8px;
+}
+
+
+.quote-button,
+.test-button,
+.whatsapp-button {
+    min-height: 42px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.quote-button {
+    background: #111111;
+
+    color: white;
+}
+
+
+.quote-button:hover {
+    background: #2a2a2a;
+
+    transform: translateY(-1px);
+}
+
+
+.test-button {
+    background: #eef0f3;
+
+    color: #111111;
+}
+
+
+.test-button:hover {
+    background: #e0e3e8;
+
+    transform: translateY(-1px);
+}
+
+
+.whatsapp-button {
+    grid-column:
+        1 / -1;
+
+    width: 100%;
+
+    background: #25D366;
+
+    color: white;
+}
+
+
+.whatsapp-button:hover {
+    background: #1ebe5d;
+
+    transform: translateY(-1px);
+}
+
+
+.quote-button:active,
+.test-button:active,
+.whatsapp-button:active {
+    transform: scale(0.98);
+}
+
+
+
+/* =========================
+   ENQUIRY
+========================= */
+
+.enquiry-section {
+    background: #111111;
+
+    color: white;
+
+    padding:
+        65px 6%;
+
+    display: grid;
+
+    grid-template-columns:
+        0.9fr 1.1fr;
+
+    gap: 60px;
+
+    align-items: start;
+}
+
+
+.enquiry-info {
+    padding-top: 20px;
+}
+
+
+.enquiry-info .section-label {
+    color: #9ca3af;
+}
+
+
+.enquiry-info h2 {
+    font-size:
+        clamp(28px, 4vw, 40px);
+
+    line-height: 1.05;
+
+    margin-bottom: 15px;
+}
+
+
+.enquiry-info > p {
+    color: #aeb4bf;
+
+    max-width: 470px;
+
+    font-size: 14px;
+
+    margin-bottom: 35px;
+}
+
+
+.info-item {
+    display: flex;
+
+    gap: 15px;
+
+    margin-bottom: 24px;
+}
+
+
+.info-item > span {
+    width: 32px;
+
+    height: 32px;
+
+    border:
+        1px solid #4b5563;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    flex-shrink: 0;
+}
+
+
+.info-item strong {
+    font-size: 13px;
+}
+
+
+.info-item p {
+    font-size: 11px;
+
+    color: #8f96a3;
+
+    margin-top: 3px;
+}
+
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-container {
+    background: white;
+
+    color: #111827;
+
+    border-radius: 10px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0,0,0,0.25);
+}
+
+
+.form-header {
+    margin-bottom: 22px;
+}
+
+
+.form-header span {
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    color: #6b7280;
+}
+
+
+.form-header h3 {
+    font-size: 24px;
+
+    margin-top: 4px;
+}
+
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+
+.form-group label {
+    display: block;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    margin-bottom: 6px;
+
+    color: #374151;
+}
+
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    border:
+        1px solid #d1d5db;
+
+    border-radius: 6px;
+
+    padding:
+        11px 12px;
+
+    font-size: 13px;
+
+    outline: none;
+
+    background: white;
+
+    color: #111827;
+
+    transition:
+        border 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.form-group textarea {
+    resize: vertical;
+
+    min-height: 100px;
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #111111;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(0,0,0,0.06);
+}
+
+
+.form-message {
+    display: none;
+
+    padding: 10px 12px;
+
+    margin-bottom: 16px;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+.form-message.error {
+    display: block;
+
+    background: #fee2e2;
+
+    color: #991b1b;
+
+    border:
+        1px solid #fecaca;
+}
+
+
+.form-message.success {
+    display: block;
+
+    background: #dcfce7;
+
+    color: #166534;
+
+    border:
+        1px solid #bbf7d0;
+}
+
+
+.submit-button {
+    width: 100%;
+
+    min-height: 47px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: #111111;
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.submit-button:hover {
+    background: #2a2a2a;
+
+    transform: translateY(-1px);
+}
+
+
+.submit-button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+.privacy-note {
+    font-size: 9px;
+
+    color: #9ca3af;
+
+    text-align: center;
+
+    margin-top: 12px;
+}
+
+
+
+/* =========================
+   SUCCESS
+========================= */
+
+.success-section {
+    padding:
+        70px 6%;
+
+    background: #f5f6f8;
+}
+
+
+.success-card {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    background: white;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,0.07);
+}
+
+
+.success-icon {
+    width: 60px;
+
+    height: 60px;
+
+    margin:
+        0 auto 18px;
+
+    border-radius: 50%;
+
+    background: #111111;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 28px;
+
+    font-weight: 900;
+}
+
+
+.success-card h2 {
+    font-size: 30px;
+
+    margin-bottom: 8px;
+}
+
+
+.success-card > p {
+    color: #6b7280;
+
+    font-size: 13px;
+
+    margin-bottom: 25px;
+}
+
+
+.lead-reference {
+    padding:
+        18px;
+
+    background: #f3f4f6;
+
+    border-radius: 8px;
+
+    margin-bottom: 20px;
+}
+
+
+.lead-reference span {
+    display: block;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    color: #6b7280;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 5px;
+}
+
+
+.lead-reference strong {
+    font-size: 20px;
+
+    letter-spacing: 1px;
+}
+
+
+.success-details {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+
+.success-details div {
+    padding:
+        12px;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 7px;
+}
+
+
+.success-details span {
+    display: block;
+
+    color: #6b7280;
+
+    font-size: 9px;
+
+    margin-bottom: 3px;
+}
+
+
+.success-details strong {
+    font-size: 11px;
+}
+
+
+.copy-button,
+.new-button {
+    width: 100%;
+
+    min-height: 43px;
+
+    border-radius: 6px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    margin-top: 8px;
+}
+
+
+.copy-button {
+    border: none;
+
+    background: #111111;
+
+    color: white;
+}
+
+
+.new-button {
+    border:
+        1px solid #d1d5db;
+
+    background: white;
+
+    color: #111111;
+}
+
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #090909;
+
+    color: white;
+
+    padding:
+        28px 6%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    align-items: center;
+}
+
+
+.footer-brand {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.footer-brand strong {
+    font-size: 13px;
+
+    letter-spacing: 0.8px;
+}
+
+
+.footer-brand span,
+.footer-text p,
+.footer-text > span {
+    color: #777;
+
+    font-size: 10px;
+}
+
+
+.footer-text {
+    text-align: right;
+}
+
+
+
+/* =========================
+   HIDDEN
+========================= */
+
+[hidden] {
+    display: none !important;
+}
+
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 950px) {
+
+    .vehicle-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .enquiry-section {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+
+    .enquiry-info {
+        padding-top: 0;
+    }
+
+}
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    .topbar {
+        min-height: 64px;
+
+        padding:
+            0 18px;
+    }
+
+
+    .brand-text span {
+        display: none;
+    }
+
+
+    .brand-text strong {
+        font-size: 11px;
+    }
+
+
+    .brand-mark {
+        font-size: 13px;
+    }
+
+
+    .browse-button {
+        display: none;
+    }
+
+
+    .header-whatsapp {
+        padding:
+            9px 12px;
+
+        font-size: 10px;
+    }
+
+
+    .page-intro {
+        padding:
+            38px 18px;
+    }
+
+
+    .page-intro h1 {
+        font-size: 32px;
+    }
+
+
+    .page-intro p {
+        font-size: 13px;
+    }
+
+
+    .vehicle-section {
+        padding:
+            40px 18px;
+    }
+
+
+    .section-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    .section-heading h2 {
+        font-size: 24px;
+    }
+
+
+    .vehicle-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+
+    .vehicle-image {
+        height: 190px;
+    }
+
+
+    .enquiry-section {
+        padding:
+            45px 18px;
+    }
+
+
+    .form-container {
+        padding: 22px;
+    }
+
+
+    .success-section {
+        padding:
+            45px 18px;
+    }
+
+
+    .success-card {
+        padding: 28px 20px;
+    }
+
+
+    .success-details {
+        grid-template-columns: 1fr;
+    }
+
+
+    footer {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .footer-text {
+        text-align: left;
+    }
+
+}
+

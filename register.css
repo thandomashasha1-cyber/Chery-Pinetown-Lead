@@ -1,0 +1,912 @@
+/* =========================================================
+   CHERY PINETOWN LEADS
+   LEAD REGISTRATION PAGE
+========================================================= */
+
+
+/* =========================================================
+   REGISTER PAGE
+========================================================= */
+
+.register-page {
+
+    width:
+        min(1100px, 92%);
+
+    margin:
+        0 auto;
+
+    padding:
+        35px 0 60px;
+
+}
+
+
+/* =========================================================
+   REGISTER HEADER
+========================================================= */
+
+.register-header {
+
+    display:
+        flex;
+
+    align-items:
+        flex-end;
+
+    justify-content:
+        space-between;
+
+    gap:
+        25px;
+
+    margin-bottom:
+        25px;
+
+}
+
+
+.register-header h2 {
+
+    color:
+        var(--black);
+
+    font-size:
+        30px;
+
+    line-height:
+        1.2;
+
+}
+
+
+.register-header p {
+
+    margin-top:
+        6px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        13px;
+
+}
+
+
+.lead-reference {
+
+    min-width:
+        190px;
+
+    padding:
+        13px 15px;
+
+    background:
+        var(--white);
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        9px;
+
+    box-shadow:
+        var(--shadow);
+
+}
+
+
+.lead-reference span {
+
+    display:
+        block;
+
+    color:
+        var(--muted);
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        1.3px;
+
+}
+
+
+.lead-reference strong {
+
+    display:
+        block;
+
+    margin-top:
+        5px;
+
+    color:
+        var(--black);
+
+    font-size:
+        13px;
+
+    letter-spacing:
+        .5px;
+
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.lead-form {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        18px;
+
+}
+
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.form-card {
+
+    background:
+        var(--white);
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        var(--radius);
+
+    padding:
+        25px;
+
+    box-shadow:
+        var(--shadow);
+
+}
+
+
+.form-card-header {
+
+    margin-bottom:
+        22px;
+
+    padding-bottom:
+        17px;
+
+    border-bottom:
+        1px solid
+        var(--border);
+
+}
+
+
+.form-card-header h3 {
+
+    margin-top:
+        4px;
+
+    color:
+        var(--black);
+
+    font-size:
+        18px;
+
+}
+
+
+.form-card-header p {
+
+    margin-top:
+        4px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        11px;
+
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.form-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap:
+        18px;
+
+}
+
+
+.form-full {
+
+    grid-column:
+        1 / -1;
+
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.form-group {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+}
+
+
+.form-group label {
+
+    margin-bottom:
+        7px;
+
+    color:
+        var(--black);
+
+    font-size:
+        11px;
+
+    font-weight:
+        800;
+
+}
+
+
+.form-group label span {
+
+    color:
+        var(--primary);
+
+}
+
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+
+    width:
+        100%;
+
+    border:
+        1px solid
+        #d8d9dd;
+
+    border-radius:
+        7px;
+
+    background:
+        #ffffff;
+
+    color:
+        var(--text);
+
+    font-family:
+        inherit;
+
+    font-size:
+        12px;
+
+    outline:
+        none;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+.form-group input,
+.form-group select {
+
+    height:
+        44px;
+
+    padding:
+        0 12px;
+
+}
+
+
+.form-group textarea {
+
+    min-height:
+        125px;
+
+    padding:
+        12px;
+
+    resize:
+        vertical;
+
+}
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+
+    color:
+        #a0a1a6;
+
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+
+    border-color:
+        var(--primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(227, 6, 19, 0.08);
+
+}
+
+
+/* =========================================================
+   HELP / ERRORS
+========================================================= */
+
+.field-help {
+
+    margin-top:
+        5px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        9px;
+
+}
+
+
+.field-error {
+
+    display:
+        none;
+
+    margin-top:
+        5px;
+
+    color:
+        var(--danger);
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+}
+
+
+.form-group.has-error input,
+.form-group.has-error select,
+.form-group.has-error textarea {
+
+    border-color:
+        var(--danger);
+
+}
+
+
+.form-group.has-error .field-error {
+
+    display:
+        block;
+
+}
+
+
+.form-group.has-success input,
+.form-group.has-success select {
+
+    border-color:
+        var(--success);
+
+}
+
+
+/* =========================================================
+   TEXTAREA FOOTER
+========================================================= */
+
+.textarea-footer {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        15px;
+
+    margin-top:
+        5px;
+
+}
+
+
+.textarea-footer small {
+
+    color:
+        var(--muted);
+
+    font-size:
+        9px;
+
+}
+
+
+.textarea-footer span {
+
+    color:
+        var(--muted);
+
+    font-size:
+        9px;
+
+    font-weight:
+        700;
+
+}
+
+
+/* =========================================================
+   FORM ACTIONS
+========================================================= */
+
+.form-actions {
+
+    display:
+        flex;
+
+    justify-content:
+        flex-end;
+
+    align-items:
+        center;
+
+    gap:
+        9px;
+
+    padding-top:
+        3px;
+
+}
+
+
+.btn-secondary {
+
+    background:
+        var(--black);
+
+    color:
+        var(--white);
+
+}
+
+
+.btn-secondary:hover {
+
+    background:
+        var(--dark);
+
+}
+
+
+.btn-outline {
+
+    background:
+        var(--white);
+
+    border:
+        1px solid
+        #d3d4d8;
+
+    color:
+        var(--text);
+
+    cursor:
+        pointer;
+
+}
+
+
+.btn-outline:hover {
+
+    background:
+        #f7f7f8;
+
+}
+
+
+/* =========================================================
+   SUCCESS MODAL
+========================================================= */
+
+.modal-overlay {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        3000;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        20px;
+
+    background:
+        rgba(0, 0, 0, 0.55);
+
+    backdrop-filter:
+        blur(3px);
+
+}
+
+
+.modal-overlay[hidden] {
+
+    display:
+        none;
+
+}
+
+
+.success-modal {
+
+    width:
+        min(440px, 100%);
+
+    padding:
+        32px;
+
+    background:
+        var(--white);
+
+    border-radius:
+        14px;
+
+    text-align:
+        center;
+
+    box-shadow:
+        0 20px 60px
+        rgba(0, 0, 0, 0.25);
+
+    animation:
+        modalEnter .25s ease;
+
+}
+
+
+@keyframes modalEnter {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(15px)
+            scale(.98);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+.success-icon {
+
+    width:
+        55px;
+
+    height:
+        55px;
+
+    margin:
+        0 auto 16px;
+
+    border-radius:
+        50%;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    background:
+        var(--success-light);
+
+    color:
+        var(--success);
+
+    font-size:
+        25px;
+
+    font-weight:
+        900;
+
+}
+
+
+.success-modal h3 {
+
+    margin-top:
+        5px;
+
+    color:
+        var(--black);
+
+    font-size:
+        21px;
+
+}
+
+
+.success-modal p {
+
+    margin-top:
+        6px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        12px;
+
+}
+
+
+.generated-lead {
+
+    margin:
+        22px 0;
+
+    padding:
+        15px;
+
+    background:
+        #f7f7f8;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        8px;
+
+}
+
+
+.generated-lead span {
+
+    display:
+        block;
+
+    color:
+        var(--muted);
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        1.2px;
+
+}
+
+
+.generated-lead strong {
+
+    display:
+        block;
+
+    margin-top:
+        5px;
+
+    color:
+        var(--black);
+
+    font-size:
+        15px;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+.modal-actions {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    gap:
+        8px;
+
+}
+
+
+.modal-actions .btn {
+
+    cursor:
+        pointer;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .register-page {
+
+        width:
+            94%;
+
+        padding-top:
+            25px;
+
+    }
+
+
+    .register-header {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .register-header h2 {
+
+        font-size:
+            25px;
+
+    }
+
+
+    .lead-reference {
+
+        width:
+            100%;
+
+    }
+
+
+    .form-card {
+
+        padding:
+            18px;
+
+    }
+
+
+    .form-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .form-full {
+
+        grid-column:
+            auto;
+
+    }
+
+
+    .form-actions {
+
+        align-items:
+            stretch;
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .form-actions .btn {
+
+        width:
+            100%;
+
+    }
+
+
+    .modal-actions {
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .modal-actions .btn {
+
+        width:
+            100%;
+
+    }
+
+    
+
+}

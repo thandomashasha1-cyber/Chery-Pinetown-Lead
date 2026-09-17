@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Manage Chery Pinetown sales agents and referral information"
+    >
+
+    <title>
+        Sales Agents | Chery Pinetown
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../css/main.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/agents.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         NAVIGATION
+    =================================================== -->
+
+    <header class="navbar">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                CH
+            </div>
+
+            <div class="brand-details">
+
+                <h1>
+                    Chery Pinetown
+                </h1>
+
+                <span>
+                    Lead Management
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="main-navigation">
+
+            <a href="../index.html">
+                Dashboard
+            </a>
+
+            <a href="register.html">
+                Register Lead
+            </a>
+
+            <a href="dashboard.html">
+                Leads
+            </a>
+
+            <a
+                href="agents.html"
+                class="active"
+            >
+                Sales Agents
+            </a>
+
+            <a href="referral.html">
+                Referrals
+            </a>
+
+            <a href="commissions.html">
+                Commissions
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ==================================================
+         MAIN
+    =================================================== -->
+
+    <main class="agents-page">
+
+
+        <!-- ==================================================
+             HEADER
+        =================================================== -->
+
+        <section class="agents-header">
+
+            <div>
+
+                <span class="page-label">
+                    SALES TEAM
+                </span>
+
+                <h2>
+                    Sales Agents
+                </h2>
+
+                <p>
+                    Manage dealership sales agents,
+                    referral codes and sales performance.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="btn btn-primary"
+                id="addAgentButton"
+            >
+                + Add Sales Agent
+            </button>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             SUMMARY
+        ================================================== -->
+
+        <section class="agent-summary">
+
+
+            <div class="agent-summary-card">
+
+                <span>
+                    Total Agents
+                </span>
+
+                <strong id="totalAgents">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="agent-summary-card">
+
+                <span>
+                    Active Agents
+                </span>
+
+                <strong id="activeAgents">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="agent-summary-card">
+
+                <span>
+                    Assigned Leads
+                </span>
+
+                <strong id="assignedLeads">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="agent-summary-card">
+
+                <span>
+                    Vehicles Sold
+                </span>
+
+                <strong id="agentVehiclesSold">
+                    0
+                </strong>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==================================================
+             SEARCH
+        =================================================== -->
+
+        <section class="agent-filter-card">
+
+            <div class="agent-search">
+
+                <label for="agentSearch">
+                    Search Agents
+                </label>
+
+                <input
+                    type="search"
+                    id="agentSearch"
+                    placeholder="Search name, number or referral code..."
+                >
+
+            </div>
+
+
+            <div class="agent-filter">
+
+                <label for="agentStatusFilter">
+                    Status
+                </label>
+
+                <select id="agentStatusFilter">
+
+                    <option value="all">
+                        All agents
+                    </option>
+
+                    <option value="active">
+                        Active
+                    </option>
+
+                    <option value="inactive">
+                        Inactive
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             AGENTS TABLE
+        =================================================== -->
+
+        <section class="agents-card">
+
+
+            <div class="agents-card-header">
+
+                <div>
+
+                    <span class="card-label">
+                        SALES TEAM REGISTER
+                    </span>
+
+                    <h3>
+                        Registered Sales Agents
+                    </h3>
+
+                </div>
+
+
+                <span
+                    class="agent-result-count"
+                    id="agentResultCount"
+                >
+                    0 agents
+                </span>
+
+            </div>
+
+
+
+            <div class="table-container">
+
+                <table class="agents-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Agent
+                            </th>
+
+                            <th>
+                                Mobile / WhatsApp
+                            </th>
+
+                            <th>
+                                Referral Code
+                            </th>
+
+                            <th>
+                                Leads
+                            </th>
+
+                            <th>
+                                Sold
+                            </th>
+
+                            <th>
+                                Commission
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="agentsTableBody">
+
+                        <tr>
+
+                            <td
+                                colspan="8"
+                                class="table-empty"
+                            >
+
+                                No sales agents registered yet.
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==================================================
+         AGENT MODAL
+    =================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="agentModal"
+        hidden
+    >
+
+        <div class="agent-modal">
+
+
+            <div class="agent-modal-header">
+
+                <div>
+
+                    <span class="card-label">
+                        SALES TEAM
+                    </span>
+
+                    <h3 id="agentModalTitle">
+                        Add Sales Agent
+                    </h3>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="closeAgentModal"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+
+            <!-- FORM -->
+
+            <form
+                id="agentForm"
+                class="agent-form"
+                novalidate
+            >
+
+
+                <div class="agent-form-group">
+
+                    <label for="agentFullName">
+                        Full Name
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="agentFullName"
+                        placeholder="e.g. Sipho Mthembu"
+                        required
+                    >
+
+                    <small
+                        class="agent-error"
+                        id="agentNameError"
+                    ></small>
+
+                </div>
+
+
+
+                <div class="agent-form-group">
+
+                    <label for="agentPhone">
+                        Mobile / WhatsApp Number
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="agentPhone"
+                        placeholder="e.g. 083 123 4567"
+                        required
+                    >
+
+                    <small
+                        class="agent-error"
+                        id="agentPhoneError"
+                    ></small>
+
+                </div>
+
+
+
+                <div class="agent-form-group">
+
+                    <label for="agentReferralCode">
+                        Referral Code
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="agentReferralCode"
+                        placeholder="e.g. SIPHO01"
+                        maxlength="20"
+                        required
+                    >
+
+                    <small class="agent-help">
+                        This code identifies leads referred by this agent.
+                    </small>
+
+                    <small
+                        class="agent-error"
+                        id="agentCodeError"
+                    ></small>
+
+                </div>
+
+
+
+                <div class="agent-form-group">
+
+                    <label for="agentStatus">
+                        Agent Status
+                    </label>
+
+                    <select id="agentStatus">
+
+                        <option value="active">
+                            Active
+                        </option>
+
+                        <option value="inactive">
+                            Inactive
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="agent-form-group">
+
+                    <label for="agentNotes">
+                        Notes
+                    </label>
+
+                    <textarea
+                        id="agentNotes"
+                        rows="4"
+                        maxlength="500"
+                        placeholder="Optional notes about the sales agent..."
+                    ></textarea>
+
+                </div>
+
+
+
+                <div class="agent-modal-actions">
+
+                    <button
+                        type="button"
+                        class="btn btn-outline"
+                        id="cancelAgent"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                    >
+                        Save Agent
+                    </button>
+
+                </div>
+
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         AGENT DETAILS MODAL
+    =================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="agentDetailsModal"
+        hidden
+    >
+
+        <div class="agent-details-modal">
+
+
+            <div class="agent-modal-header">
+
+                <div>
+
+                    <span class="card-label">
+                        AGENT PROFILE
+                    </span>
+
+                    <h3 id="detailsAgentName">
+                        Sales Agent
+                    </h3>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="closeDetailsModal"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+
+            <div class="agent-profile">
+
+
+                <div class="agent-profile-main">
+
+                    <div class="agent-avatar">
+                        A
+                    </div>
+
+                    <div>
+
+                        <strong id="profileAgentName">
+                            Agent Name
+                        </strong>
+
+                        <span id="profileAgentCode">
+                            CODE
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="agent-status-badge"
+                    id="profileAgentStatus"
+                >
+                    Active
+                </div>
+
+            </div>
+
+
+
+            <div class="agent-detail-grid">
+
+
+                <div>
+
+                    <span>
+                        Mobile / WhatsApp
+                    </span>
+
+                    <strong id="profileAgentPhone">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Referral Code
+                    </span>
+
+                    <strong id="profileAgentReferral">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Registered Leads
+                    </span>
+
+                    <strong id="profileAgentLeads">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Vehicles Sold
+                    </span>
+
+                    <strong id="profileAgentSold">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Commission Earned
+                    </span>
+
+                    <strong id="profileAgentCommission">
+                        R0
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Date Added
+                    </span>
+
+                    <strong id="profileAgentDate">
+                        —
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="agent-profile-notes">
+
+                <h4>
+                    Notes
+                </h4>
+
+                <p id="profileAgentNotes">
+                    No notes recorded.
+                </p>
+
+            </div>
+
+
+
+            <div class="agent-details-actions">
+
+                <button
+                    type="button"
+                    class="btn btn-outline"
+                    id="editAgent"
+                >
+                    Edit Agent
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="closeDetailsBottom"
+                >
+                    Close
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         FOOTER
+    =================================================== -->
+
+    <footer class="footer">
+
+        <p>
+
+            ©
+            <span id="currentYear">
+                2026
+            </span>
+
+            <strong>
+                Chery Pinetown Leads
+            </strong>
+
+        </p>
+
+        <span>
+            Dealership Lead Management System
+        </span>
+
+    </footer>
+
+
+
+    <script src="../js/main.js"></script>
+
+    <script src="../js/agents.js"></script>
+
+
+</body>
+
+</html>
